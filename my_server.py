@@ -106,7 +106,16 @@ def QueryNextNS(curr_addr, ns_list: typing.List[bytearray], id):
 		query.question["QTYPE"] = 2
 		query.question["QCLASS"] = 1
 
-
+		
+		# yahoo.com.
+		# ns1.yahoo.com.
+		# com. not work
+		# check dig how to send .com request
+ 		# let DIG send dig nan-zhou.com @localhost -p 8081 +trace first
+		# return a RESPONSE of ROOT SERVER
+		# then，DIG will ask your SERVER，this time he will ask .CN，
+		# comparing your .CN with .CN from dig send, what difference they have
+		
 		raw_response = send_udp_message(query.to_bytes(), ns, 53)
 		response = DNSQuery(raw_response)
 		ns_server_list = [x["RDATA"][0] for x in response.answers if x["RDLENGTH"] > 0]
