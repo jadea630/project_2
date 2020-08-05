@@ -113,8 +113,8 @@ def QueryNextNS(curr_addr, ns_list: typing.List[bytearray], id):
 		# check dig how to send .com request
  		# let DIG send dig nan-zhou.com @localhost -p 8081 +trace first
 		# return a RESPONSE of ROOT SERVER
-		# then，DIG will ask your SERVER，this time he will ask .CN，
-		# comparing your .CN with .CN from dig send, what difference they have
+		# then，DIG will ask your SERVER，this time he will ask .com，
+		# comparing your .com with .com from dig send, what difference they have
 		
 		raw_response = send_udp_message(query.to_bytes(), ns, 53)
 		response = DNSQuery(raw_response)
