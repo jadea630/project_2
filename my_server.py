@@ -111,7 +111,7 @@ def QueryNextNS(curr_addr, ns_list: typing.List[bytearray], id):
 		# ns1.yahoo.com.
 		# com. not work
 		# check dig how to send .com request
- 		# let DIG send dig nan-zhou.com @localhost -p 8081 +trace first
+ 		# let DIG send dig yahoo.com @localhost -p 8081 +trace first
 		# return a RESPONSE of ROOT SERVER
 		# then，DIG will ask your SERVER，this time he will ask .com，
 		# comparing your .com with .com from dig send, what difference they have
